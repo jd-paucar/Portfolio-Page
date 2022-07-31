@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    background-color: goldenrod;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 2px solid;
+    text-align: center;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-areas: 'navbar'
+                        'banner'
+                        'sobremi'
+                        'frase'
+                        'portfolio'
+                        'habilidades'
+                        'footer';
+}
+
+.navbar {
+    grid-area: navbar;
+    font-family: 'Poppins';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.00);
+    color: #333;
+    width: 100%;
+    position: fixed;
+}
+
+.navbar_1 {
+    margin-left: .5rem;
+    font-size: 1.5rem;
+    padding: 20px 30px;
+}
+
+.navbar_2 ul {
+    display: flex;
+    margin: 0;
+    padding: 0; 
+}
+
+.navbar_2 ul li {
+    list-style: none;
+}
+
+.navbar_2 ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    display: block;
+}
+
+.navbar_2 ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 19px;
+    margin-top: 20px;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+@media (max-width: 992px) {
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar_2 {
+        display: none;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar_2 ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar_2 li {
+        text-align: center;
+    }
+
+    .navbar_2.active {
+        display: flex;
+    }
+}
+
+.banner {
+    grid-area: banner;
+    background-image: url(assets/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 4rem 1fr 9fr 4rem;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 710px;
+    color: #fff;
+    font-family: 'Poppins';
+}
+
+.banner_1 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-self: center;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.linea {
+    width: 1px;
+    height: 200px;
+    background-color: #fff;
+}
+
+.iconos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.icono-behance {
+    color: #fff;
+}
+
+.icono-linkedin {
+    color: #fff;
+}
+
+.icono-behance:hover {
+    color: #053eff;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.icono-linkedin:hover {
+    color: #0077b5;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.banner_2 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    align-self: center;
+}
+
+.nombre {
+    font-size: 3rem;
+}
+
+@media (max-width: 992px) {
+    .banner {
+        grid-area: banner;
+        background-image: url(assets/banner.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        grid-template-columns: 2rem 9fr 1fr 2rem;
+        grid-template-rows: 2fr 4fr 2fr;
+        width: 100%;
+        height: 650px;
+        color: #fff;
+        font-family: 'Poppins';
+    }
+    
+    .banner_1 {
+        grid-column: 3/4;
+        grid-row: 3/4;
+        align-self: center;
+    }
+    
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .linea {
+        width: 1px;
+        height: 10px;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .banner_2 {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        align-self: center;
+    }
+
+}
+
+.sobremi {
+    grid-area: sobremi;
+    background-color: #fff;
+    width: 100%;
+    height: fit-content;
+    font-family: 'Poppins';
+    color: #333;
+    display: grid;
+    grid-template-columns: 12rem 7fr 3fr 12rem;
+    grid-template-rows: 6rem 1fr 6rem;
+}
+
+.sobremi-info {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sobremi-titulo {
+    font-size: 3rem;
+}
+
+.foto-daniel {
+    width: 200px;
+}
+
+.foto-marketing {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    display: flex;
+    margin-top: 4rem;
+    width: 350px;
+    margin: 0px auto;
+}
+
+.boton-mas {
+    width: fit-content;
+    height: fit-content;
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+}
+
+@media (max-width: 992px) {
+    .sobremi {
+        grid-area: sobremi;
+        background-color: #fff;
+        width: 100%;
+        height: fit-content;
+        font-family: 'Poppins';
+        color: #333;
+        display: grid;
+        grid-template-columns: 6rem 1fr 6rem;
+        grid-template-rows: 3rem 1fr 3rem;
+    }
+
+    .sobremi-info {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .foto-marketing {
+        display: none;
+    }
+}
+
+.frase {
+    grid-area: frase;
+    background-color: rgb(125, 120, 120);
+    width: 100%;
+    height: 18rem;
+    font-family: 'Poppins';
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.frase h1 {
+    text-align: center;
+}
+
+.frase a {
+    text-decoration: none;
+    padding: 20px 30px;
+    background-color: #333;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.frase a:hover{
+    background-color: rgb(125, 120, 120);
+    color: #333;
+    border: 1px solid;
+    transition: .5s;
+}
+
+.portfolio {
+    grid-area: portfolio;
+    background-color: #fff;
+}
+
+.preview-portfolio {
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins';
+    color: #333;
+    display: grid;
+    grid-template-columns: 12rem 1fr 1fr 1fr 12rem;
+    grid-template-rows: 6rem 0.5fr 1fr 1fr 1fr 0.5fr 6rem;
+    gap: 10px;
+}
+
+.titulo-portfolio {
+    grid-column: 4/5;
+    grid-row: 2/3;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 3rem;
+    align-items: center;
+    object-fit: cover;
+}
+
+.etepapatito {
+    grid-column: 2/3;
+    grid-row: 2/4;
+    width: 100%;
+}
+
+.aceites {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    width: 100%;
+}
+
+.samira {
+    grid-column: 4/5;
+    grid-row: 3/5;
+    width: 100%;
+}
+
+.isla {
+    width: 100%;
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+
+.dunas {
+    width: 100%;
+    grid-column: 2/4;
+    grid-row: 4/5;
+}
+
+.tierra {
+    grid-column: 2/3;
+    grid-row: 5/6;
+    width: 100%;
+}
+
+.huacachina {
+    width: 100%;
+    grid-column: 3/5;
+    grid-row: 5/6;
+}
+
+.boton-portfolio {
+    grid-row: 6/7;
+    grid-column: 2/5;
+    text-decoration: none;
+    padding: 20px 30px;
+    background-color: #333;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    width: fit-content;
+    height: fit-content;
+}
+
+.boton-portfolio:hover {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid;
+    transition: .5s;
+}
+
+@media (max-width: 992px) {
+    .preview-portfolio {
+        width: 100%;
+        height: 100%;
+        font-family: 'Poppins';
+        color: #333;
+        display: grid;
+        grid-template-columns: 6rem 1fr 1fr 1fr 6rem;
+        grid-template-rows: 3rem 0.5fr 1fr 1fr 1fr 0.5fr 3rem;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .preview-portfolio {
+        width: 100%;
+        height: 100%;
+        font-family: 'Poppins';
+        color: #333;
+        display: grid;
+        grid-template-columns: 6rem 1fr 1fr 1fr 6rem;
+        grid-template-rows: 3rem 0.5fr 1fr 1fr 1fr 0.5fr 3rem;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .preview-portfolio {
+        width: 100%;
+        height: 100%;
+        font-family: 'Poppins';
+        color: #333;
+        display: grid;
+        grid-template-columns: 6rem 1fr 1fr 1fr 6rem;
+        grid-template-rows: 3rem 0.5fr 1fr 1fr 1fr 0.5fr 3rem;
+        gap: 10px;
+    }
+}
+
+.habilidades {
+    grid-area: habilidades;
+    font-family: 'Poppins';
+    display: grid;
+    grid-template-columns: 12rem 5fr 5fr 12rem;
+    grid-template-rows: 1fr 9fr 6rem;
+}
+
+.titulo-habilidades {
+    font-size: 3rem;
+    text-align: center;
+    color: #333;
+    grid-column: 2/4;
+    grid-row: 1/2;
+}
+
+.logo-habilidades {
+    width: 40%;
+    object-fit: contain;
+    transform: scale(1);
+}
+
+.logo-habilidades:hover {
+    transform: scale(1.05);
+    transition: .4s;
+}
+
+.habilidades-tecnicas {
+    grid-column: 2/3;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.blog {
+    grid-area: blog;
+}
+
+.footer {
+    grid-area: footer;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    background-color: #333;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.raya {
+    height: 1px;
+    width: 100px;
+    background-color: rgb(247, 247, 247);
+}
+
+.contacto-iconos {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.iconos-footer{
+    color: #fff;
+    transform: scale(1);
+}
+
+.iconos-footer:hover {
+    transform: scale(1.1);
+}
+
+.figuritas {
+    display: flex;
+    gap: 1rem;
+}
+
+.logo-footer {
+    font-family: 'Poppins';
+    color: #fff;
+}
+
+.footer-detalles {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-acuerdos {
+    color: #fff;
+    font-family: 'Poppins';
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+}
